@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo service nginx start
 # Here is where you'd want to start your http daemon. For example:
 #service httpd start
 #exit $?
