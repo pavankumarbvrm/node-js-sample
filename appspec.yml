@@ -2,11 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /tmp/elb-test
+    destination: /var/www/
 hooks:
   ApplicationStop:
     - location: deregister_from_elb.sh
-    - location: stop_httpd.sh
+    - location: stop_nginx.sh
+  install:
+    - cd node-js-sample
+    - sudo npm install
+    - sudo npm start
   ApplicationStart:
-    - location: start_httpd.sh
-    - location: register_with_elb.sh
+    - location: start_nginx.sh
