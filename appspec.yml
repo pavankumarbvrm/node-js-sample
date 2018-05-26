@@ -7,6 +7,9 @@ hooks:
   ApplicationStop:
     - location: deregister_from_elb.sh
     - location: stop_nginx.sh
+  files:
+  - source: /
+    destination: /var/www/
   install:
     - cd /var/www/
     - sudo npm install
