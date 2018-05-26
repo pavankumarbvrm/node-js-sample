@@ -8,7 +8,7 @@ hooks:
     - location: deregister_from_elb.sh
     - location: stop_nginx.sh
   install:
-    - cd node-js-sample
+    - cd /var/www/
     - sudo npm install
     - sudo npm start
   ApplicationStart:
