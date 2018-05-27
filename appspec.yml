@@ -3,9 +3,8 @@ version: 0.0
 os: linux
 
 files:
-  - source: source
-    destination: /home/ubuntu/deployment/
-
+  - source: /
+    destination: /home/ubuntu/
 hooks:
   BeforeInstall:
     - location: stop_nginx.sh
