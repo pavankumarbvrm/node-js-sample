@@ -1,18 +1,16 @@
+
 version: 0.0
 os: linux
+
 files:
   - source: /
-    destination: /var/www/html
+    destination: /home/ubuntu/deployment/
+
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: deregister_from_elb.sh
     - location: stop_nginx.sh
-  files:
-  - source: /
-    destination: /var/www/html
-  install:
-    - cd /var/www/html
-    - sudo npm install
-    - sudo npm start
+    - location: install.sh
   ApplicationStart:
-    - location: start_nginx.sh
+    - location: start_nginx.sh 
+    - location: register_with_elb.sh
