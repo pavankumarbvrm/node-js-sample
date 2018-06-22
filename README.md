@@ -1,5 +1,7 @@
 # Lifecycle event scripts for Application Load Balancers and Network Load Balancers
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pavankumarbvrm/node-js-sample.svg)](https://greenkeeper.io/)
+
 When running a web service, you don't want customer traffic to be sent to the instances that host your service when a deployment is in progress. For this reason, you might register your instances with a load balancer. During an AWS CodeDeploy in-place deployment, a load balancer prevents internet traffic from being routed to an instance while it is being deployed to, and then makes the instance available for traffic again after the deployment to that instance is complete.
 
 Lifecycle event scripts give you the ability to deploy to instances that are registered with a target group for an Application Load Balancer or Network Load Balancer. You set the name or names of the target group that your instances are a part of and run the scripts during the appropriate lifecycle events. The scripts take care of deregistering the instance, waiting for the connection to drain, and re-registering the instance after the deployment is complete.
